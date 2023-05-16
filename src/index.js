@@ -4,14 +4,13 @@ class API{
   constructor(url,method='GET'){
   this.url=url;
   this.method=method;
-    this.#secure=url.startsWith('https');
+  this.#secure=url.startsWith('https');
   }
-  
-  this.isSecure(){
+  isSecure(){
   return this.#secure;
   }
-  this.updateURL(url){
-  this.url=url;
+  updateURL(url){
+  this.url=url.replace("http://", "https://");
     this.#secure=url.startsWith('https');
   }
 }
